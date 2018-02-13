@@ -1,3 +1,8 @@
+(load "timer.lisp")
+(defpackage :affirmations
+  (:use :cl :timer))
+
+(in-package :affirmations)
 
 (defparameter affirmations '())
 
