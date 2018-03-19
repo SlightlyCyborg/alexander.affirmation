@@ -1,6 +1,6 @@
 (load "timer.lisp")
 (defpackage :affirmations
-  (:use :cl :timer))
+  (:use :cl :timer :core))
 
 (in-package :affirmations)
 
@@ -15,6 +15,9 @@
 
 (defun print-affirmation (instance)
   (format t "~%Ponder this affirmation:~%~a~%~%" (.content instance)))
+
+(defun say-affirmation (instance)
+  (say (format nil "~a" (.content instance))))
 
 (defun schedule-affirmation (index sec min hour)
   (labels ((play-sound ()
